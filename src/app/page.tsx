@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-bold mb-8">LinkLater Contract Analysis Tool</h1>
       <p className="mt-8">
-        Want to upload a contract? Go to the <Link href="/upload" className="text-blue-600 underline">Upload Page</Link>.
+        Want to analyse your contracts? Sign up for an account today! <Link href="/signup" className="text-blue-600 underline">Sign Up</Link>.
       </p>
     </div>
   );
