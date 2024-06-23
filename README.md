@@ -1,3 +1,7 @@
+# Prompt Engineering
+
+All of the prompt engineering logic for the project can be found in the notebook called hackathon_gemini_prompts_and_answers.ipynb. This notebook generated the Cover Letter as our final output: https://github.com/FinnCummins/cambridgeLLMHackathon/blob/main/hackathon_gemini_prompts_and_answers.ipynb
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
