@@ -4,7 +4,7 @@ const Navbar: React.FC = () => {
   return (
     <div className="w-full bg-blue-600 p-4 flex justify-between items-center">
       <div className="text-white text-xl font-bold">
-        LinkLater - Contract Analysis Tool
+        Legal Contract Analysis
       </div>
       <div>
         <Link href="/">

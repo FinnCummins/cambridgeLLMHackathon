@@ -14,20 +14,16 @@ const HomePage: React.FC = () => {
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     if (!selectedFile) {
       return;
     }
-
     const formData = new FormData();
     formData.append('file', selectedFile);
-
     try {
       const res = await fetch('/api/upload', {
         method: 'POST',
         body: formData,
       });
-
       if (res.ok) {
         const data = await res.json();
         setResponse(data.message);
@@ -45,10 +41,15 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl font-bold mb-8">LinkLater Contract Analysis Tool</h1>
-      <p className="mt-8">
-        Want to analyse your contracts? Sign up for an account today! <Link href="/signup" className="text-blue-600 underline">Sign Up</Link>.
+      <h1 className="text-4xl font-bold mb-8">Legal Contract Analysis</h1>
+      <p className="mt-4">
+        Want to analyze your contracts? Sign up for an account today!
       </p>
+
+      {/* Add an image here */}
+      <img src="https://images.prismic.io//intuzwebsite/2fa11526-bac7-4580-820f-c8fdd07470cf_Frame+16297.png?w=2400&q=80&auto=format,compress&fm=png8" alt="Contract Analysis" className="mt-8 w-full max-w-md"/>
+
+      <Link href="/signup" className="text-blue-600 underline mt-8">Sign Up</Link>
     </div>
   );
 };

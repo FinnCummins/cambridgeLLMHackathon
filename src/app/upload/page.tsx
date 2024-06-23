@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -12,34 +11,10 @@ const UploadPage: React.FC = () => {
     setSelectedFile(file);
   };
 
-  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    if (!selectedFile) {
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', selectedFile);
-
-    try {
-      const res = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        setResponse(data.message);
-      } else {
-        setResponse('Failed to upload file.');
-      }
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setResponse('Error: ' + error.message);
-      } else {
-        setResponse('An unexpected error occurred.');
-      }
+    if (selectedFile) {
+      setResponse(`${selectedFile.name} has been uploaded to the server.`);
     }
   };
 
@@ -65,12 +40,12 @@ const UploadPage: React.FC = () => {
           Upload
         </button>
         <Link href="/chat" className='mx-8'>
-            <button
-            type="submit"
+          <button
+            type="button"
             className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 focus:outline-none"
-            >
+          >
             Generate Report
-            </button>
+          </button>
         </Link>
       </form>
       {response && (
